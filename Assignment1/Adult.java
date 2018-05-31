@@ -8,4 +8,16 @@ public class Adult extends Customer{
 	public Adult(String fn, String ln, int a){
 		super(fn,ln,a);
 	}
+	
+	public double getSavingsInterest(){
+		return SAVINGS_INTEREST; 		
+	} 	
+	
+	public double getCheckInterest(){
+		return CHECK_INTEREST;
+	}
+	
+	public double getCheckCharge(){
+		return CHECK_CHARGE;
+	}
 }
