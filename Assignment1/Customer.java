@@ -28,7 +28,7 @@ public abstract class Customer{
 	
 	public String toString(){
 		
-		return ("The name of the customer is " + firstName + " " + lastName + ", age " + age + " and his/her customer number is " customerNumber);
+		return ("The name of the customer is " + firstName + " " + lastName + ", age " + age + " and your customer number is " customerNumber);
 		
 	}
 	
