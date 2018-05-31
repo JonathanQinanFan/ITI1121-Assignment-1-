@@ -14,3 +14,20 @@ public class Senior extends Customer {
 		super(fn, ln, a);
 		this.VIP = VIP;
 	}
+	
+	public double getSavingsInterest(){
+		return SAVINGS_INTEREST;			
+	}
+	
+	public double getCheckInterest(){
+     		return CHECK_INTEREST;   
+ 	}
+	
+	public double getCheckCharge(){
+		return CHECK_CHARGE;
+	}
+}
+
+	
+
+	
