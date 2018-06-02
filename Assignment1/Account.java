@@ -1,7 +1,7 @@
 public abstract class Account{
 	
 	Customer customer; 
-	protected double balance;
+	private double balance;
 	private final int INITSIZE = 25;
 	//Not sure how to use this,
 	Transactions[] transactions;
