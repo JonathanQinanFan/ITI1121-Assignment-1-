@@ -3,11 +3,14 @@ public abstract class Account{
 	//Initializing instance variables
 	Customer customer; 
 	private double balance;
-	private final int INITSIZE = 25;
+	private static final int INITSIZE = 25;
+	private int capacity;
 	Transactions[] transactions;
 
-	//Constructor making accounts for a specific customer and balance.
-	public Account(Customer c, double b){
+	//Constructor making accounts for a specific customer.
+	public Account(Customer c){
+		capacity = INITSIZE;
+		this.balance = 0;
 		this.customer = c;
 		this.balance = balance;
 		transactions = new Transactions[INITSIZE];
