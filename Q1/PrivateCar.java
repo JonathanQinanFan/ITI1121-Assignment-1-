@@ -13,4 +13,9 @@ public abstract class PrivateCar extends Transportation{
 		
 		return distance;
 	}
+	
+	public int getAmount(){
+		
+		return RATE*distance;
+	}
 }
