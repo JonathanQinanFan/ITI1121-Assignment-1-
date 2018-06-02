@@ -1,10 +1,10 @@
 public abstract class Customer{
 	
 	//Initializing instance variables
-	protected String firstName;
-	protected String lastName;
-	protected int age;
-	protected int customerNumber;
+	private String firstName;
+	private String lastName;
+	private int age;
+	private int customerNumber;
 	private int lastCustomerNumber = 9999;
 	
 	//Constructor with three parameters. The first and last name of the customer, and his age
