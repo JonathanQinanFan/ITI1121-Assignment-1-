@@ -1,0 +1,11 @@
+2.a
+
+protected(v2), default(v3), and public(v4) variables of pack1.Class1 are visible in pack1.Class2
+
+2.b
+
+protected(v2) and public(v4) variables of pack1.Class1 are visible in pack2.Class3
+
+2.c
+
+public(v4) variables declared in pack1.Class1 are visible in pack2.Class4

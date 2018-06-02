@@ -1,4 +1,4 @@
-public abstract class Dinner extends Meal{
+public class Dinner extends Meal{
 
 
 	private double ALLOWANCE = 31.80;
@@ -8,8 +8,8 @@ public abstract class Dinner extends Meal{
 		super(description, numberOfMeals);
 	}
 	
-	public double getAmount(){
+	public double getALLOWANCE(){
 		
-		return ALLOWANCE*numberOfMeals;
+		return ALLOWANCE;
 	}
 }

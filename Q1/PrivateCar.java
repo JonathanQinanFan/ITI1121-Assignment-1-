@@ -1,9 +1,9 @@
-public abstract class PrivateCar extends Transportation{
+public class PrivateCar extends Transportation{
 
 	private int distance;
 	double RATE = 0.427;
 	
-	public PrivateCar(String description, String destination, String distance){
+	public PrivateCar(String description, String destination, int distance){
 		
 		super(description, destination);
 		this.distance = distance;
@@ -14,7 +14,7 @@ public abstract class PrivateCar extends Transportation{
 		return distance;
 	}
 	
-	public int getAmount(){
+	public double getAmount(){
 		
 		return RATE*distance;
 	}

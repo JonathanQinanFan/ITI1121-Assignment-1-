@@ -2,7 +2,7 @@ public abstract class Expense{
 	
 	private String description;
 	
-	public Expense(description){
+	public Expense(String description){
 		
 		this.description = description;
 	}
@@ -13,9 +13,6 @@ public abstract class Expense{
 		return description;
 	}
 	
-	public abstract double getAmount(){
-		
-		return amount;
-	}
+	public abstract double getAmount();
 
 }

@@ -12,4 +12,11 @@ public abstract class Meal extends Expense{
 		
 		return numberOfMeals;
 	}
+	
+	public double getAmount(){
+		
+		return numberOfMeals*getALLOWANCE();
+	}
+	
+	public abstract double getALLOWANCE();
 }

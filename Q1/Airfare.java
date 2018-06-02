@@ -1,4 +1,4 @@
-public abstract class Airfare extends Transportation{
+public class Airfare extends Transportation{
 
 	private double amount;
 	
