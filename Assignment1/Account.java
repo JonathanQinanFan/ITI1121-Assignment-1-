@@ -1,47 +1,56 @@
-public abstract class Account{
+abstract class Account{
 	
-	//Initializing instance variables
-	Customer customer; 
+	private Customer customer;
 	private double balance;
+	private int accountNumber;
+	private int lastaccountNumber = 9999;
+	private Transaction[] transactions;
 	private static final int INITSIZE = 25;
-	private int capacity;
-	Transactions[] transactions;
-
-	//Constructor making accounts for a specific customer.
-	public Account(Customer c){
-		capacity = INITSIZE;
-		this.balance = 0;
-		this.customer = c;
-		this.balance = balance;
-		transactions = new Transactions[INITSIZE];
+	private int currentSize;
+	
+	public Account(Customer customer){
+		
+		this.customer = customer;
+		balance = 0;
+		
+		currentSize = INITSIZE;
+		transactions = new Transaction[currentSize];
+		accountNumber = lastaccountNumber;
+		lastaccountNumber++;
 		
 	}
 	
-	//This method will be called when the array is full and needs more space.
-	public void reallocate(Transactions[] t){
-		int destination = new int[this.transactions.length *2];
-		for (int i=; i<this.transactions.length; i++){
-			destination[i] = this.transactions[i];
+	public reallocate(){
+		
+		Transaction[] temp = new Transaction[currentSize*2]
+		
+		for(int i = 0; i<currentSize; i++){
+			temp[i] = transactions[i];
 		}
-		this.transactions = destination;
+		
+		this.transactions = temp;
+		
 	}
 	
-	//Getters for the balance and customer
 	public double getBalance(){
+		
 		return balance;
 	}
 	
-	public Customer getCustomer(){
+	public customer getCustomer(){
+		
 		return customer;
 	}
 	
-	//Setter in order to change customer
-	public void setCustomer(Customer c){
-		this.customer = c;
-	}	
-	
-	//ToString used to return the balance of a customer
 	public String toString(){
-		return("The balance of the account of " + customer + " is " + balance)
+		
+		String s = "The balance of the account of " + customer + " is " + balance;
+		return s;
 	}
+	
+	public void setCustomer(Customer c){
+		
+		customer = c;
+	}
+	
 }

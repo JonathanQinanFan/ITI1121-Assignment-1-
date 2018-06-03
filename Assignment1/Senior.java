@@ -12,8 +12,8 @@ public class Senior extends Customer {
 	private boolean VIP;
 	
 	//Constructor that has 4 parameter. The first and last name, the age and the VIP status.
-	public Senior (String fn, String ln, int a, boolean VIP){
-		super(fn, ln, a);
+	public Senior (String firstName, String lastName, int age, boolean VIP){
+		super(firstName, lastName, age);
 		this.VIP = VIP;
 	}
 	
@@ -23,11 +23,20 @@ public class Senior extends Customer {
 	}
 	
 	public double getCheckInterest(){
-     		return CHECK_INTEREST;   
+     	return CHECK_INTEREST;   
  	}
 	
 	public double getCheckCharge(){
 		return CHECK_CHARGE;
+	}
+	
+	public double getODP{
+		if(VIP = false){
+			return OVERDRAFT_PENALTY;
+		}
+		else{
+			return OVERDRAFT_PENALTY_VIP;
+		}
 	}
 }
 
