@@ -19,12 +19,15 @@ public class Bank {
     private static final int INIT_CAPACITY = 100;
     
     /** Creates a new instance of Bank */
-    public Bank() ;
+    public Bank() {
+        accounts = new Account[INIT_CAPACITY];
+        
+        
+    }
 
 
-    
-    /********************************************************************
-     * Creates a new account.
+       /********************************************************************
+    re     * Creates a new account.
      * pre: customer information must be not null and types must be valid
      * post: New account added to bank
      * @param customerName String Account owner's name
@@ -68,7 +71,9 @@ public class Bank {
      * @param accountNumber String Account's number
      * @return String Account information as a String object
      */    
-    public String getAccount(String accountNumber);
+    public String getAccount(String accountNumber){
+        return 
+    }
     
     /***********************************************************************
      * Given an account number tells if the account exists or not
@@ -81,6 +86,18 @@ public class Bank {
 
 
     /** You need to create private method : Allocate to allocate a new array to hold the transactions. */
-    private void reallocate() 
+    private void reallocate() {
+        if (accounts.length==currentSize){
+            Account[] temp = new Account[currentSize*2];
+            
+            for(int i = 0; i<currentSize; i++){
+                temp[i] = accounts[i];
+                }
+                
+                this.accounts = temp;
+    }
+    
+    
+    
 }
 
