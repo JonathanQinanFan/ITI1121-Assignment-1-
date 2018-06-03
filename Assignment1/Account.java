@@ -1,4 +1,4 @@
-class Account{
+abstract class Account{
 	
 	private Customer customer;
 	private double balance;
