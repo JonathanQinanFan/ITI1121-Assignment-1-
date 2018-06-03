@@ -27,9 +27,9 @@ public class Transaction{
 			case 2: 
 				transactionType = "addedInterest";break;
 			default:
-				System.out.println("Please, choose a valid transaction type.")
+				System.out.println("Please, choose a valid transaction type.");
 		}
-		return (Date + ": " + transactionType + " of " + amount ". Fees:" + fees + ".")
+		return (date + ": " + transactionType + " of " + amount + ". Fees:" + fees + ".");
 		
 	}
 	

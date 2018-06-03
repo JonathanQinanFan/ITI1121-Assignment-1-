@@ -1,10 +1,10 @@
-abstract class Account{
+public abstract class Account{
 	
 	private Customer customer;
 	private double balance;
 	private int accountNumber;
 	private int lastaccountNumber = 9999;
-	private Transaction[] transactions;
+	Transaction[] transactions;
 	private static final int INITSIZE = 25;
 	private int currentSize;
 	
@@ -20,16 +20,18 @@ abstract class Account{
 		
 	}
 	
-	public reallocate(){
+	public void reallocate(){
 		
-		Transaction[] temp = new Transaction[currentSize*2]
+		if(transactions.length==currentSize){
 		
-		for(int i = 0; i<currentSize; i++){
-			temp[i] = transactions[i];
+			Transaction[] temp = new Transaction[currentSize*2];
+			
+			for(int i = 0; i<currentSize; i++){
+				temp[i] = transactions[i];
+			}
+			
+			this.transactions = temp;
 		}
-		
-		this.transactions = temp;
-		
 	}
 	
 	public double getBalance(){
@@ -37,7 +39,12 @@ abstract class Account{
 		return balance;
 	}
 	
-	public customer getCustomer(){
+	public void addBalance(double money){
+		
+		balance = (balance + money);
+	}
+	
+	public Customer getCustomer(){
 		
 		return customer;
 	}

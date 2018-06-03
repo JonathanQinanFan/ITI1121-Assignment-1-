@@ -23,14 +23,18 @@ public abstract class Customer{
 	
 	//Method equals used to determine if two objects has the same content or description
 	public boolean equals(Customer other){
-		if(other.lastName = lastName && other.firstName = firstName && other.age = age && other.customerNumber = customerNumber)
+		if(other.lastName == lastName && other.firstName == firstName && other.age == age && other.customerNumber == customerNumber){
 			return true;
+		}
+		else
+			return false;
 	}
 	
 	//toString method used to display the customer information.
 	public String toString(){
 		
-		return ("The name of the customer is " + firstName + " " + lastName + ", age " + age + " and their customer number is " customerNumber);
+		String s = "The name of the customer is " + firstName + " " + lastName + ", age " + age + " and their customer number is " + customerNumber;
+		return s;
 		
 	}
 	
@@ -41,6 +45,10 @@ public abstract class Customer{
 	
 	public abstract double getCheckCharge();
 	
-	public abstract double getODP();
+	public abstract double getODP_100();
+	
+	public abstract double getODP_500();
+	
+	public abstract double getNF();
 
 }
