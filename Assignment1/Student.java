@@ -5,8 +5,8 @@ public class Student extends Customer {
 	private final double CHECK_INTEREST = 0.03;
 	private final double CHECK_CHARGE = 0.02;
 	
-	public Student(String fn, String ln, int a){
-		super(fn, ln, a);
+	public Student(String firstName, String lastName, int age){
+		super(firstName, lastName, age);
 	}
 	
 	public double getSavingsInterest(){
