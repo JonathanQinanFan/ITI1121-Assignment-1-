@@ -1,13 +1,15 @@
+//This class will be taking care of the checking accounts
 public class CheckingAccount extends Account{
 	
+	//Initializing instance variable
 	private int history = 0;
 	
-		
+	//Constructor that uses the constructor of the Customer class	
 	public CheckingAccount(Customer customer){
 		
 		super(customer);
 	}
-	
+	//Method used to deposit a given amount of money to the checking account
 	public void deposit(double amount){
 		
 		addBalance(amount);
@@ -18,7 +20,7 @@ public class CheckingAccount extends Account{
 		history++;
 		
 	}
-	
+	//Method used when the user wants to withdraw money from his account
 	public void withdraw(double amount){
 		
 		if ((deductBalance(amount))<0){
@@ -123,7 +125,7 @@ public class CheckingAccount extends Account{
 		
 		
 	}
-	
+	//Method used to add Interest
 	public void addInterest(){
 		
 		double balance = getBalance();
