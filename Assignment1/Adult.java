@@ -5,7 +5,9 @@ public class Adult extends Customer{
 	private final double CHECK_CHARGE = 0.03;
 	private final double OVERDRAFT_PENALTY = 25;
 	private final double NO_FEE = 0;
-
+	private final int Ctype = 1;
+	private boolean VIP = false;
+	
 	public Adult(String firstName, String lastName, int age){
 		super(firstName, lastName, age);
 	}
@@ -32,5 +34,15 @@ public class Adult extends Customer{
 	public double getNF(){
 		
 		return NO_FEE;
+	}
+	public int getCustomerType(){
+		
+		return Ctype;
+		
+	}
+	
+	public boolean getVIP(){
+		
+		return VIP;
 	}
 }

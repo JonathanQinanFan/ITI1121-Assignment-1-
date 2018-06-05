@@ -12,6 +12,7 @@ public class Senior extends Customer {
 	private final double OVERDRAFT_PENALTY_VIP_500 = 5;
 	private final double NO_FEE = 0;
 	private boolean VIP;
+	private final int Ctype = 0;
 	
 	//Constructor that has 4 parameter. The first and last name, the age and the VIP status.
 	public Senior (String firstName, String lastName, int age, boolean VIP){
@@ -21,16 +22,37 @@ public class Senior extends Customer {
 	
 	//These getters are overwriting the abstract methods from the parent class
 	public double getSavingsInterest(){
-		return SAVINGS_INTEREST;			
+		if(VIP = false){
+			return SAVINGS_INTEREST;	
+		}
+		else{
+			return SAVINGS_INTEREST_VIP;
+		}
 	}
 	
 	public double getCheckInterest(){
-     	return CHECK_INTEREST;   
+		if(VIP = false){
+			return CHECK_INTEREST;   
+		}
+		else{
+			return CHECK_INTEREST_VIP;
+		}
  	}
 	
 	public double getCheckCharge(){
-		return CHECK_CHARGE;
+		if(VIP = false){
+			return CHECK_CHARGE;
+		}
+		else{
+			return CHECK_CHARGE_VIP;
+		}
 	}
+	
+	public boolean getVIP(){
+		
+		return VIP;
+	}
+	
 	
 	public double getODP_100(){
 		if(VIP = false){
@@ -52,6 +74,12 @@ public class Senior extends Customer {
 	public double getNF(){
 		
 		return NO_FEE;
+	}
+	
+	public int getCustomerType(){
+		
+		return Ctype;
+		
 	}
 }
 

@@ -39,9 +39,16 @@ public abstract class Account{
 		return balance;
 	}
 	
-	public void addBalance(double money){
+	public double deductBalance(double money){
+		
+		balance = (balance - money);
+		return balance;
+	}
+	
+	public double addBalance(double money){
 		
 		balance = (balance + money);
+		return balance;
 	}
 	
 	public Customer getCustomer(){

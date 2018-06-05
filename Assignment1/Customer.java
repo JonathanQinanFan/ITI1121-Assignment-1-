@@ -50,5 +50,8 @@ public abstract class Customer{
 	public abstract double getODP_500();
 	
 	public abstract double getNF();
-
+	
+	public abstract int getCustomerType();
+	
+	public abstract boolean getVIP();
 }

@@ -6,6 +6,8 @@ public class Student extends Customer {
 	private final double CHECK_CHARGE = 0.02;
 	private final double OVERDRAFT_PENALTY = 0;
 	private final double NO_FEE = 0;
+	private final int Ctype = 2;
+	private boolean VIP = false;
 	
 	public Student(String firstName, String lastName, int age){
 		super(firstName, lastName, age);
@@ -34,5 +36,14 @@ public class Student extends Customer {
 	public double getNF(){
 		
 		return NO_FEE;
+	}
+	public int getCustomerType(){
+		
+		return Ctype;
+		
+	}
+	public boolean getVIP(){
+		
+		return VIP;
 	}
 }
