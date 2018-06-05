@@ -1,3 +1,4 @@
+//This the parent class for every customer type.
 public abstract class Customer{
 	
 	//Initializing instance variables
