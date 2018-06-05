@@ -29,7 +29,7 @@ public class Senior extends Customer {
 			return SAVINGS_INTEREST_VIP;
 		}
 	}
-	
+	//Getter for the Check Interest
 	public double getCheckInterest(){
 		if(VIP = false){
 			return CHECK_INTEREST;   
@@ -38,7 +38,7 @@ public class Senior extends Customer {
 			return CHECK_INTEREST_VIP;
 		}
  	}
-	
+	//Getter for the Check Charge
 	public double getCheckCharge(){
 		if(VIP = false){
 			return CHECK_CHARGE;
@@ -47,7 +47,7 @@ public class Senior extends Customer {
 			return CHECK_CHARGE_VIP;
 		}
 	}
-	
+	//Getter for the VIP status
 	public boolean getVIP(){
 		
 		return VIP;
@@ -71,11 +71,12 @@ public class Senior extends Customer {
 			return OVERDRAFT_PENALTY_VIP_500;
 		}
 	}
+	//Getter for when there's no fees
 	public double getNF(){
 		
 		return NO_FEE;
 	}
-	
+	//Getter for the customer type
 	public int getCustomerType(){
 		
 		return Ctype;
