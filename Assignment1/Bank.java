@@ -19,7 +19,9 @@ public class Bank {
     private static final int INIT_CAPACITY = 100;
     
     /** Creates a new instance of Bank */
-    public Bank() ;
+    public Bank() {
+        accounts = new Account[INIT_CAPACITY];
+        }
 
 
     
@@ -37,7 +39,16 @@ public class Bank {
      */
     public String addAccount(String customerName, String customerAddress, 
                              int customerAge, String customerPhoneNumber, 
-                             int customerType, int typeAccount);
+                             int customerType, int typeAccount){
+                             Customer customer;
+                             if(customerType == STUDENT){
+                             customer = new Student(customerName, customerAddress, customerAge, customerPhoneNumber, customerName);}
+                             else if (customerType== ADULT){ 
+                             customer = new Adult(customerName, customerAddress, customerAge, customerPhoneNumber, customerName);}
+                             else{ customer = new Senior(customerName, customerAddress, customerAge, customerPhoneNumber, customerName);}
+                             Account newAccount = new Account(customer, SAVINGS, customerName);
+                             return "";
+                             }
     
     /***********************************************************************
      * Make a deposit into account.
@@ -68,7 +79,9 @@ public class Bank {
      * @param accountNumber String Account's number
      * @return String Account information as a String object
      */    
-    public String getAccount(String accountNumber);
+    public String getAccount(String accountNumber){
+        return ("The account number is " + accountNumber);
+        }
     
     /***********************************************************************
      * Given an account number tells if the account exists or not
