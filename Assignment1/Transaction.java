@@ -9,7 +9,7 @@ public class Transaction{
 	private String description;
 	private String transactionType;
 	
-	//Constructor that build an instance of transaction with a specified transaction type, an amount and the fees.
+	//Constructor that build an instance of transaction with a specified transaction type, an amount and the fees
 	public Transaction(byte transaction, double amount, double fees){
 		
 		this.transaction = transaction;
@@ -19,7 +19,7 @@ public class Transaction{
 		
 	}
 	
-	//This method will figure what kind of transaction is the user trying to make. Then, it will displays the information.
+	//This method will figure what kind of transaction is the user trying to make. Then, it will displays the information
 	public String processTransaction(){
 		switch(transaction){
 			case 0:
