@@ -1,13 +1,15 @@
+//This class will take care of the savings accounts
 public class SavingsAccount extends Account{	
 	
+	//Initializing instance variable
 	private int history = 0;
 	
-		
+	//Constructor calling the Customer's constructor to create an instance of SavingsAccount	
 	public SavingsAccount(Customer customer){
 		
 		super(customer);
 	}
-	
+	//Method used when user is depositing money
 	public void deposit(double amount){
 		
 		addBalance(amount);
@@ -18,7 +20,7 @@ public class SavingsAccount extends Account{
 		history++;
 		
 	}
-	
+	//Method used when the user wants to withdraw money from his savings account
 	public void withdraw(double amount){
 		
 		if ((deductBalance(amount))<0){
@@ -123,7 +125,7 @@ public class SavingsAccount extends Account{
 		
 		
 	}
-	
+	//Method used to add interest
 	public void addInterest(){
 		
 		double balance = getBalance();
