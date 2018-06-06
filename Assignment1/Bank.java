@@ -19,7 +19,9 @@ public class Bank {
     private static final int INIT_CAPACITY = 100;
     
     /** Creates a new instance of Bank */
-    public Bank() ;
+    public Bank() {
+        accounts = new Account[INIT_CAPACITY];
+        }
 
 
     
@@ -37,7 +39,16 @@ public class Bank {
      */
     public String addAccount(String customerName, String customerAddress, 
                              int customerAge, String customerPhoneNumber, 
-                             int customerType, int typeAccount);
+                             int customerType, int typeAccount){
+                             Customer customer;
+                             if(customerType == STUDENT){
+                             customer = new Student(customerName, customerAddress, customerAge, customerPhoneNumber, customerName);}
+                             else if (customerType== ADULT){ 
+                             customer = new Adult(customerName, customerAddress, customerAge, customerPhoneNumber, customerName);}
+                             else{ customer = new Senior(customerName, customerAddress, customerAge, customerPhoneNumber, customerName);}
+                             Account newAccount = new Account(customer, SAVINGS, customerName);
+                             return "";
+                             }
     
     /***********************************************************************
      * Make a deposit into account.
@@ -47,7 +58,21 @@ public class Bank {
      * @param amount double Amount to deposit
      * @return double New balance
      */
-    public String makeDeposit(String accountNumber, double amount);
+     
+     //If the find method would be implemented, that would work just like makeWithdrawal
+    public String makeDeposit(String accountNumber, double amount){
+    
+            if(amount < 0){
+            return ("In order to deposit money, you must enter a positive amount.");
+            } else if(amount = 0){
+            return("Depositing no money at all won't change your balance. Please, enter a positive amount.")
+            else{ 
+            accounts[accountNumber].addBalance(amount);
+            return ("The balance of the account " + accountNumber + " is now : " + (accounts[index].getBalance));
+            
+            }
+          
+    }
     
     /***********************************************************************
      * Make a withdrawal from account.
@@ -57,10 +82,16 @@ public class Bank {
      * @param amount double Amount to withdraw
      * @return double New balance
      */    
+     
+     
     public String makeWithdrawal(String accountNumber, double amount){
-        int index = find(accountNumber);
-        accounts[index].withdrawal(amount);
-        return Double.toString(accounts[index].getBalance());       
+            if(amount < 0){
+            return ("In order to withdraw money, you must enter a positive amount.");
+            } else if(amount = 0){
+            return("Withdrawing no money at all won't change your balance. Please, enter a positive amount.")
+            else{ 
+            accounts[accountNumber].deductBalance(amount);
+            return ("The balance of the account " + accountNumber + " is now : " + (accounts[accountNumber].getBalance));      
     }
 
     /***********************************************************************
@@ -68,19 +99,41 @@ public class Bank {
      * @param accountNumber String Account's number
      * @return String Account information as a String object
      */    
-    public String getAccount(String accountNumber);
+    public String getAccount(String accountNumber){
+        return ("The account number is " + accountNumber);
+        }
     
     /***********************************************************************
+   
+     //This method is not find in the brightspace assignment description. Therefore, it has not been implemented
+     
      * Given an account number tells if the account exists or not
      * @param accountNumber String Account's number
      * @return int TRUE if accountNumber exists in accounts[]. Otherwise, -1.
      */    
-    private int find(String accountNumber);
+   // private int find(String accountNumber);
 
  /***********************************************************************
 
-
+    //The comments below seems false since it doesn't describe reallocate the same way as the assignment on brightspace is describing it.
     /** You need to create private method : Allocate to allocate a new array to hold the transactions. */
-    private void reallocate() 
-}
+    private void reallocate() {
+        if(accounts.length==currentSize){
 
+		
+
+			Account[] temp = new Account[currentSize*2];
+
+			
+
+			for(int i = 0; i<currentSize; i++){
+
+				temp[i] = accounts[i];
+
+			}
+
+			
+
+			this.accounts = temp;
+    }
+}
