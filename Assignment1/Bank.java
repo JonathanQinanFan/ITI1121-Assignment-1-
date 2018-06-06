@@ -59,7 +59,7 @@ public class Bank {
      * @return double New balance
      */
      
-     //If the find method would be implemented, that would work just like makeWithdrawal
+     //Our bank is assuming that the accountNumber is always valid. Find method is not used since it's not covered in the directives.
     public String makeDeposit(String accountNumber, double amount){
     
             if(amount < 0){
@@ -83,7 +83,7 @@ public class Bank {
      * @return double New balance
      */    
      
-     
+     //Our bank is assuming that the account number is always valid, in that case this method has been modified
     public String makeWithdrawal(String accountNumber, double amount){
             if(amount < 0){
             return ("In order to withdraw money, you must enter a positive amount.");
@@ -105,18 +105,21 @@ public class Bank {
     
     /***********************************************************************
    
-     //This method is not find in the brightspace assignment description. Therefore, it has not been implemented
+     //This method is not found in the brightspace assignment directives. Therefore, it has not been implemented. For this reason, our bank
+     // is assuming that the accountNumber is always valid
      
      * Given an account number tells if the account exists or not
      * @param accountNumber String Account's number
      * @return int TRUE if accountNumber exists in accounts[]. Otherwise, -1.
      */    
-   // private int find(String accountNumber);
+  // private int find(String accountNumber);
+  
 
  /***********************************************************************
 
     //The comments below seems false since it doesn't describe reallocate the same way as the assignment on brightspace is describing it.
     /** You need to create private method : Allocate to allocate a new array to hold the transactions. */
+    //This method reallocate in a bigger array when the array is full
     private void reallocate() {
         if(accounts.length==currentSize){
 
